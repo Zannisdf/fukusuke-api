@@ -2,17 +2,17 @@ const clientsService = require('../services/clients.service');
 
 const registerClientsController = (router) => {
   router.post('/clients', (req, res) => {
-    clientsService.create(req.body).then((product) => res.json(product));
+    clientsService.create(req.body).then((client) => res.json(client));
   });
 
   router.get('/clients/:id', (req, res) => {
-    clientsService.findOne(req.params.id).then((product) => res.json(product));
+    clientsService.findOne(req.params.id).then((client) => res.json(client));
   });
 
   router.patch('/clients/:id', (req, res) => {
     clientsService
       .update(req.params.id, req.body)
-      .then((product) => res.json(product));
+      .then((client) => res.json(client));
   });
 
   router.delete('/clients/:id', (req, res) => {
